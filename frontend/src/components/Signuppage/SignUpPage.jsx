@@ -28,7 +28,7 @@ export default function SignUpPage({userName, setuserName}) {
     }
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_LINK}/user/signup`, requestOptions)
+        `https://noted-back.onrender.com/user/signup`, requestOptions)
         const result = await response.json()
         console.log(result)
         if(!result.sucess)
