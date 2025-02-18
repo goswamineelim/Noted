@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Homepage</title>
+
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container mt-4">
+        <h1><%= Note.title %></h1>
+        <pre><%= Note.body %></pre>
+    </div>
+
+    <div class="container">
+        <img src="<%= Note.createdBy.profileImageURL %>" width="50px" style="border:1px solid blue; border-radius:10%;" alt="">
+        <%= Note.createdBy.fullName %>
+    </div>
+    <form action="/note/delete/<%= Note._id %>" method="post">
+        <button class="btn btn-primary" type="submit">delete</button>
+    </form>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

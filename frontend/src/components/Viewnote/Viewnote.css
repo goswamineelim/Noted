@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+html
+{
+    background: #f7f4eae0 ;
+}
+body
+{
+    background-image: url("/background1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container
+{
+  width: 800px;
+  /* height: 80vh; */
+  background-color: bisque;
+  color: #443850 ;
+  border-radius: 15px;
+  padding: 30px 40px 30px 40px;
+  border: 2px solid rgba(94, 27, 27, 0.527);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  background: transparent;
+  backdrop-filter: blur(30px);
+}
+
+.container h1
+{
+  font-size: 36px;
+  text-align: center;
+  color: #4a280c;
+  margin: 0px 0px;
+}
+
+.input-box
+{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+}
+
+.input-box input
+{
+  width: 92%;
+  height: 100%;
+  font-family: "Poppins", serif;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(94, 27, 27, 0.527);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 0px 30px 0px 30px;
+}
+
+.input-box2
+{
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  margin-top: 30px;
+}
+
+.input-box2 textarea
+{
+    resize: none;
+    font-family: "Poppins", serif;
+  width: 92%;
+  height: 70%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(94, 27, 27, 0.527);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 30px 30px 30px 30px;
+}
+.input-box3
+{
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.input-box3 input
+{
+  width: 92%;
+  height: 100%;
+  font-family: "Poppins", serif;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(94, 27, 27, 0.527);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 0px 30px 0px 30px;
+}
+.login-button button
+{
+    position: relative;
+    margin-top: 25px;
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 17px;
+  color: #625041;
+  font-weight: 700;
+}
+.login-button button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.login-button button span:after {
+  content: '\00bb';
+  /* font-size: 20px; */
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+}
+
+.login-button button:hover span {
+  padding-right: 15px;
+}
+
+.login-button button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.login-button button {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  /* color: black; */
+  /* font-size: 1rem; */
+  letter-spacing: .15rem;
+  transition: all .5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #0cf; */
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #625041;
+    transition: all .5s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+.register
+{
+  font-size: 15px;
+  text-align: center;
+  margin: 15px 0 0;
+  
+}
+
+.register a
+{
+  text-decoration: none;
+  font-weight: 600;
+  color: #274690;
+}
+
+.register a:hover
+{
+  text-decoration: underline;
+}
+
+
+.tag-item
+{
+  background-color:white ;
+  padding: .5em .9em;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color:#4a280c;
+}
+.tag-item .close
+{
+  height: 20px;
+  width: 20px;
+  color:white;
+  background-color:#4a280c ;
+  display: inline-block;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .5em;
+  font-size: 18px;
+}
+
+.tags-container
+{
+  display: flex;
+  align-items:center ;
+  flex-wrap: wrap;
+  gap: .6em;
+}
