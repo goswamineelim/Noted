@@ -28,7 +28,7 @@ app.use(express.static(__dirname + "public"));
 
 //middleware
 app.use(cors({
-    origin: true, 
+    origin: "https://noted-7717.onrender.com", 
     credentials: true 
 }))
 app.use(express.urlencoded({extended:false}))
