@@ -22,7 +22,7 @@ export default function Editnote() {
       };
 
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_LINK}/note/${noteId}`, requestOptions);
+        const response = await fetch(`https://noted-back.onrender.com/note/${noteId}`, requestOptions);
 
         if (response.ok) {
           const result = await response.json();
