@@ -23,7 +23,7 @@ export default function Editnote() {
       };
 
       try {
-        const response = await fetch(`https://noted-back.onrender.com/note/${noteId}`, requestOptions);
+        const response = await fetch(`/api/note/${noteId}`, requestOptions);
 
         if (response.ok) {
           const result = await response.json();
@@ -55,7 +55,7 @@ export default function Editnote() {
     }
     try {
       const response = await fetch(
-        `https://noted-back.onrender.com/note/${noteId}`, requestOptions)
+        `/api/note/${noteId}`, requestOptions)
         const result = await response.json()
         
         // console.log(result.token)

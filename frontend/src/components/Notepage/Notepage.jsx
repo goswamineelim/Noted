@@ -22,7 +22,7 @@ export default function LoginPage() {
             };
 
             try {
-                const response = await fetch(`https://noted-back.onrender.com/`, requestOptions);
+                const response = await fetch(`/api/`, requestOptions);
 
                 if (response.ok) {
                     const result = await response.json();

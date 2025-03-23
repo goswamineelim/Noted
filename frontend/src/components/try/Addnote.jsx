@@ -26,7 +26,7 @@ export default function LoginPage() {
     }
     try {
       const response = await fetch(
-        `https://noted-back.onrender.com/note`, requestOptions)
+        `api/note`, requestOptions)
         const result = await response.json()
         console.log(result.token)
         // setCookie(result.token)

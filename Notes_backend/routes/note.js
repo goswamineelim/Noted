@@ -1,6 +1,8 @@
-const {Router} = require('express')
+import { Router } from 'express';
+import note from '../models/note.js';
+
 const router = Router();
-const note = require('../models/note');
+
 
 router.get('/add-new', (req, res)=>{
     return res.render('addNote',{
@@ -130,4 +132,4 @@ router.get("/labels",async(req,res)=>{
     return res.json({"labels" : uniquelabels});
 })
 
-module.exports = router;
+export default router;

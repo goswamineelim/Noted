@@ -17,18 +17,18 @@ export default function App() {
   
     useEffect(() => {
       const stylesMap = {
-        "/": "/src/components/Homepage/Homepage.css",
-        "/loginpage": "/src/components/Loginpage/Loginpage.css",
-        "/signuppage": "/src/components/Signuppage/SignUpPage.css",
-        "/notepage": "/src/components/Notepage/Notepage.css",
-        "/addnote": "/src/components/Addnote/Addnote.css",
-        "/binpage": "/src/components/Binpage/Binpage.css",
+        "/": "/static/css/Homepage.css",
+        "/loginpage": "/static/css/Loginpage.css",
+        "/signuppage": "/static/css/SignUpPage.css",
+        "/notepage": "/static/css/Notepage.css",
+        "/addnote": "/static/css/Addnote.css",
+        "/binpage": "/static/css/Binpage.css",
       };
   
       const currentStyle =
         stylesMap[location.pathname] ||
-        (location.pathname.startsWith("/editnote/") && "/src/components/Editnote/Editnote.css") ||
-        (location.pathname.startsWith("/viewnote/") && "/src/components/Viewnote/Viewnote.css");
+        (location.pathname.startsWith("/editnote/") && "/static/css/Editnote.css") ||
+        (location.pathname.startsWith("/viewnote/") && "/static/css/Viewnote.css");
   
       const existingLink = document.getElementById("dynamic-style");
       

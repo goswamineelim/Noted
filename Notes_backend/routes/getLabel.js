@@ -1,6 +1,8 @@
-const {Router} = require('express')
+import { Router } from 'express';
+import note from '../models/note.js';
+
 const router = Router();
-const note = require('../models/note');
+
 
 router.get('/show',async(req,res)=>{
     if(!req.user){
@@ -33,4 +35,4 @@ router.get('/bin', async (req, res) => {
         return res.status(500).json({ message: "Server error" });
     }
 });
-module.exports = router;
+export default router;

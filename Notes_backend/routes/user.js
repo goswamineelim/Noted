@@ -1,5 +1,6 @@
-const { Router } = require('express');
-const User = require('../models/user')
+import { Router } from 'express';
+import User from '../models/user.js';
+
 const router = Router();
 
 router.get('/signin', (req, res) => {
@@ -64,6 +65,8 @@ router.post('/signin', async (req, res) => {
 
 router.get('/logout', (req, res) => {
     res.clearCookie('token').redirect('/');
+    req.body = "";
+    res.redirect(req.originalUrl);
 })
 
-module.exports = router;
+export default router;

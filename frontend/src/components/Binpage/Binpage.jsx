@@ -21,7 +21,7 @@ export default function LoginPage() {
             };
 
             try {
-                const response = await fetch(`https://noted-back.onrender.com/getlabel/bin`, requestOptions);
+                const response = await fetch(`/api/getlabel/bin`, requestOptions);
 
                 if (response.ok) {
                     const result = await response.json();

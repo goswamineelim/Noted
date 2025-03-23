@@ -49,7 +49,7 @@ export default function LoginPage({userName, setuserName}) {
     }
     try {
       const response = await fetch(
-        `https://noted-back.onrender.com/user/signin`, requestOptions)
+        `/api/user/signin`, requestOptions)
         const result = await response.json()
         console.log(result.token)
         // setCookie(result.token)

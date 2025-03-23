@@ -22,7 +22,7 @@ function BlobButton({ label, _id, action, style, setNotes, count, setCount }) {
         };
 
         try {
-          const response = await fetch(`https://noted-back.onrender.com/note/${_id}`, requestOptions);
+          const response = await fetch(`/api/note/${_id}`, requestOptions);
 
           if (response.ok) {
             const result = await response.json();
@@ -40,7 +40,7 @@ function BlobButton({ label, _id, action, style, setNotes, count, setCount }) {
             }
             try {
               const response = await fetch(
-                `https://noted-back.onrender.com/note/${_id}`, requestOptions)
+                `/api/note/${_id}`, requestOptions)
               const result = await response.json()
 
               // console.log(result.token)
@@ -70,7 +70,7 @@ function BlobButton({ label, _id, action, style, setNotes, count, setCount }) {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
         };
         try {
-          const response = await fetch(`https://noted-back.onrender.com/note/delete/${_id}`, requestOptions);
+          const response = await fetch(`/api/note/delete/${_id}`, requestOptions);
 
           if (response.ok) {
             const result = await response.json();

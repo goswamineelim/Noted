@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "build": "npm i && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "SET NODE_ENV=production& node Notes_backend/index.js",
+    "dev": "nodemon Notes_backend/index.js"
   },
   "author": "",
   "license": "ISC",
