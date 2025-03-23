@@ -7,8 +7,10 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies([]);
     useEffect(() => {
-        if (!cookies.token)
+        if (!cookies.token){
+            console.log(cookies.token);
             navigate('/loginpage');
+        }
     }, []);
     const [count, setCount] = useState(0);
     const [notes, setNotes] = useState([{}]);

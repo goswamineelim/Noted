@@ -6,15 +6,6 @@ import { useCookies } from "react-cookie"
 import {  useEffect,useState } from "react";
 export default function LoginPage({userName, setuserName}) {
   const navigate = useNavigate();
-  const [cookies, setCookie, removeCookie] = useCookies([]);
-    useEffect(() => {
-        if(cookies.token)
-          navigate('/notepage');
-      },[]);
-      const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-
   useEffect(() => {
     const savedUsername = localStorage.getItem("username");
     const savedPassword = localStorage.getItem("password");
@@ -25,7 +16,18 @@ export default function LoginPage({userName, setuserName}) {
       setRememberMe(true);
     }
   }, []);
-  async function formSubmit(formData) {
+  const [cookies, setCookie, removeCookie] = useCookies([]);
+    useEffect(() => {
+        if(cookies.token)
+          navigate('/notepage');
+      },[]);
+      const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+
+  async function formSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     if (rememberMe) {
       
       localStorage.setItem("username", username);
@@ -51,11 +53,13 @@ export default function LoginPage({userName, setuserName}) {
       const response = await fetch(
         `/api/user/signin`, requestOptions)
         const result = await response.json()
-        console.log(result.token)
-        // setCookie(result.token)
-        if(!result.sucess)
-          throw result
-        navigate('/notepage');
+        console.log(result)
+        if(result.sucess){
+          setCookie('token', result.token, { path: '/' });
+          navigate('/notepage');
+          
+        }
+        throw result
     }
     catch (error) {
     console.error(error);
@@ -67,7 +71,7 @@ export default function LoginPage({userName, setuserName}) {
   return (
     <>
       <div className='container'>
-        <form action={formSubmit}>
+        <form onSubmit={formSubmit}>
           <h1>Login</h1>
           <div className='input-box'>
             <input type='email' placeholder='Email' name='email' value={username}
